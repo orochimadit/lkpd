@@ -73,5 +73,20 @@ class AppFlowTest extends TestCase
         $response = $this->get(route('admin.export.spss'));
         $response->assertStatus(200);
         $response->assertHeader('content-type', 'text/csv; charset=UTF-8');
+
+        // Student management
+        $response = $this->get(route('admin.students.index'));
+        $response->assertStatus(200);
+        $response->assertSee('Kelola Data Siswa');
+
+        // LKPD management
+        $response = $this->get(route('admin.lkpd.index'));
+        $response->assertStatus(200);
+        $response->assertSee('Daftar Pengumpulan & Penilaian LKPD', false);
+
+        // Motivation N-Gain analysis
+        $response = $this->get(route('admin.motivation.index'));
+        $response->assertStatus(200);
+        $response->assertSee('Rekapitulasi Pretest, Posttest & Uji N-Gain', false);
     }
 }

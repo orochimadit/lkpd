@@ -68,11 +68,14 @@
             </a>
         </div>
 
-        <nav class="hidden md:flex items-center gap-6">
+        <nav class="hidden md:flex items-center gap-5">
             @if(auth()->check() && auth()->user()->isGuru())
-                <a href="{{ route('admin.dashboard') }}" class="font-semibold text-sm {{ request()->routeIs('admin.dashboard*') ? 'text-secondary border-b-2 border-secondary pb-1' : 'text-on-surface-variant hover:text-secondary' }}">Dashboard Guru</a>
-                <a href="{{ route('admin.export.spss') }}" class="font-semibold text-sm text-green-700 hover:text-green-800 flex items-center gap-1 bg-green-50 px-3 py-1.5 rounded-lg border border-green-200">
-                    <span class="material-symbols-outlined text-base">download</span> Export Data SPSS
+                <a href="{{ route('admin.dashboard') }}" class="font-semibold text-xs md:text-sm {{ request()->routeIs('admin.dashboard*') ? 'text-secondary border-b-2 border-secondary pb-1' : 'text-on-surface-variant hover:text-secondary' }}">Monitoring</a>
+                <a href="{{ route('admin.students.index') }}" class="font-semibold text-xs md:text-sm {{ request()->routeIs('admin.students*') ? 'text-secondary border-b-2 border-secondary pb-1' : 'text-on-surface-variant hover:text-secondary' }}">Data Siswa</a>
+                <a href="{{ route('admin.lkpd.index') }}" class="font-semibold text-xs md:text-sm {{ request()->routeIs('admin.lkpd*') ? 'text-secondary border-b-2 border-secondary pb-1' : 'text-on-surface-variant hover:text-secondary' }}">Nilai LKPD</a>
+                <a href="{{ route('admin.motivation.index') }}" class="font-semibold text-xs md:text-sm {{ request()->routeIs('admin.motivation*') ? 'text-secondary border-b-2 border-secondary pb-1' : 'text-on-surface-variant hover:text-secondary' }}">Analisis Motivasi (N-Gain)</a>
+                <a href="{{ route('admin.export.spss') }}" class="font-semibold text-xs text-green-700 hover:text-green-800 flex items-center gap-1 bg-green-50 px-3 py-1.5 rounded-lg border border-green-200">
+                    <span class="material-symbols-outlined text-base">download</span> Export SPSS
                 </a>
             @else
                 <a href="{{ route('student.dashboard') }}" class="font-semibold text-sm {{ request()->routeIs('student.dashboard') ? 'text-secondary border-b-2 border-secondary pb-1' : 'text-on-surface-variant hover:text-secondary' }}">Beranda</a>
