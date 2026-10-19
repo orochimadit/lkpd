@@ -1,0 +1,60 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --color-primary: #021541;
+    --color-primary-container: #1a2b56;
+    --color-primary-fixed: #dae1ff;
+    --color-on-primary-fixed-variant: #354572;
+    --color-secondary: #0060ac;
+    --color-secondary-container: #68abff;
+    --color-secondary-fixed: #d4e3ff;
+    --color-surface: #fbf8fd;
+    --color-surface-container-low: #f5f3f7;
+    --color-surface-container-high: #e9e7ec;
+    --color-surface-container-lowest: #ffffff;
+    --color-background: #f5f7fa;
+    --color-on-surface: #1b1b1f;
+    --color-on-surface-variant: #45464f;
+    --color-outline-variant: #c5c6d0;
+
+    --font-headline: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Be Vietnam Pro', sans-serif;
+}
+
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background-color: #f5f7fa;
+    color: #1b1b1f;
+}
+
+h1, h2, h3, h4, h5, h6, .font-headline {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.content-card {
+    background: #ffffff;
+    box-shadow: 0 8px 30px rgba(2, 21, 65, 0.05);
+    border-radius: 16px;
+}
+
+.nav-btn-shadow {
+    box-shadow: 0 4px 0px #003e73;
+}
+
+.nav-btn-shadow:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0px #003e73;
+}
+
+.card-elevation {
+    box-shadow: 0 4px 20px rgba(2, 21, 65, 0.06);
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
