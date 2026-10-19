@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>E-Modul Iklan - Pengenalan Iklan</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#e0e3e6",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#2a2d30",
+                        "surface-variant": "#e4e2e6",
+                        "primary": "#021541",
+                        "on-primary-fixed-variant": "#354572",
+                        "error": "#ba1a1a",
+                        "surface": "#fbf8fd",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e9e7ec",
+                        "on-secondary-fixed": "#001c39",
+                        "surface-container-low": "#f5f3f7",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#b5c5f9",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#fbf8fd",
+                        "secondary-fixed-dim": "#a4c9ff",
+                        "on-background": "#1b1b1f",
+                        "surface-tint": "#4d5d8b",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f2f0f4",
+                        "outline-variant": "#c5c6d0",
+                        "on-primary-container": "#8393c5",
+                        "secondary-container": "#68abff",
+                        "on-tertiary-fixed": "#191c1e",
+                        "tertiary-fixed-dim": "#c4c7ca",
+                        "surface-container": "#efedf1",
+                        "tertiary": "#15191b",
+                        "outline": "#757680",
+                        "inverse-surface": "#303034",
+                        "on-secondary-container": "#003e73",
+                        "primary-fixed": "#dae1ff",
+                        "secondary": "#0060ac",
+                        "on-surface-variant": "#45464f",
+                        "on-tertiary-fixed-variant": "#44474a",
+                        "on-secondary-fixed-variant": "#004883",
+                        "on-surface": "#1b1b1f",
+                        "surface-dim": "#dbd9dd",
+                        "surface-container-highest": "#e4e2e6",
+                        "background": "#fbf8fd",
+                        "on-tertiary-container": "#919497",
+                        "on-primary-fixed": "#051944",
+                        "primary-container": "#1a2b56",
+                        "inverse-primary": "#b5c5f9",
+                        "secondary-fixed": "#d4e3ff",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "lg": "48px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "margin-desktop": "64px",
+                        "base": "8px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-large": ["Be Vietnam Pro"],
+                        "body-main": ["Be Vietnam Pro"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-bold": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "button-text": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-large": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-main": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-xl": ["40px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "button-text": ["16px", {"lineHeight": "24px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Be Vietnam Pro', sans-serif; background-color: #F5F7FA; }
+        .content-card {
+            background: white;
+            box-shadow: 0 8px 30px rgba(2, 21, 65, 0.05);
+            border-radius: 16px;
+        }
+        .progress-track {
+            height: 12px;
+            background: #e4e2e6;
+            border-radius: 99px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            width: 20%;
+            background: #0060ac;
+            border-radius: 99px;
+            transition: width 0.5s ease-out;
+        }
+        .nav-btn-shadow {
+            box-shadow: 0 4px 0px #003e73;
+        }
+        .nav-btn-shadow:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0px #003e73;
+        }
+    </style>
+</head>
+<body class="text-on-background">
+<!-- Top Navigation Bar -->
+<header class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full h-16 z-50 bg-surface dark:bg-surface-container shadow-sm fixed top-0 left-0">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-extrabold text-primary dark:text-primary-fixed">
+            E-Modul Iklan
+        </div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">account_circle</span>
+</div>
+</header>
+<div class="flex min-h-screen pt-16">
+<!-- Sidebar Navigation -->
+<aside class="hidden md:flex flex-col h-screen w-72 fixed left-0 top-16 py-md px-sm gap-2 bg-surface-container-low border-r border-outline-variant overflow-y-auto">
+<div class="mb-6 px-4">
+<h2 class="text-primary font-headline-lg-mobile text-xl font-bold">Daftar Isi</h2>
+<p class="text-on-surface-variant text-sm">Materi Iklan SD Kelas VI</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 p-3 bg-secondary-container text-on-secondary-container rounded-lg font-bold transition-all active:scale-98" href="#">
+<span class="material-symbols-outlined">info</span>
+<span class="font-label-bold text-label-bold">Pengenalan Iklan</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all active:scale-98" href="#">
+<span class="material-symbols-outlined">category</span>
+<span class="font-label-bold text-label-bold">Jenis-jenis Iklan</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all active:scale-98" href="#">
+<span class="material-symbols-outlined">view_quilt</span>
+<span class="font-label-bold text-label-bold">Struktur Iklan</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all active:scale-98" href="#">
+<span class="material-symbols-outlined">record_voice_over</span>
+<span class="font-label-bold text-label-bold">Bahasa Iklan</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all active:scale-98" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-label-bold text-label-bold">Evaluasi</span>
+</a>
+</nav>
+<div class="mt-auto p-4">
+<button class="w-full py-3 bg-secondary text-white rounded-xl font-button-text nav-btn-shadow">
+                    Mulai Belajar
+                </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-72 p-margin-mobile md:p-margin-desktop bg-[#F5F7FA] min-h-screen pb-32">
+<!-- Progress Section -->
+<div class="max-w-3xl mx-auto mb-8">
+<div class="flex justify-between items-center mb-2">
+<span class="text-on-surface-variant font-label-bold">Progres Belajar</span>
+<span class="text-secondary font-label-bold">20% Selesai</span>
+</div>
+<div class="progress-track">
+<div class="progress-fill"></div>
+</div>
+</div>
+<!-- Content Module -->
+<article class="max-w-3xl mx-auto content-card overflow-hidden">
+<header class="bg-primary-fixed px-8 py-6">
+<div class="flex items-center gap-2 text-on-primary-fixed-variant mb-1">
+<span class="material-symbols-outlined text-sm">book</span>
+<span class="text-xs font-bold uppercase tracking-wider">Topik 1: Pengenalan</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary">Apa Itu Iklan?</h1>
+</header>
+<div class="p-8 space-y-6">
+<div class="space-y-4">
+<p class="font-body-large text-body-large text-on-surface leading-relaxed">
+                            Halo adik-adik hebat! Pernahkah kamu melihat gambar minuman segar di papan pinggir jalan? Atau mendengar ajakan membeli mainan baru di televisi?
+                        </p>
+<p class="font-body-main text-body-main text-on-surface-variant">
+                            Nah, itu semua disebut dengan <strong class="text-secondary">Iklan</strong>. Secara sederhana, iklan adalah cara seseorang atau sebuah perusahaan untuk memberitahu orang banyak tentang suatu produk atau jasa agar mereka tertarik untuk membeli atau menggunakannya.
+                        </p>
+</div>
+<!-- Highlight Box -->
+<div class="bg-surface-container-low border-l-4 border-secondary p-6 rounded-r-xl">
+<h3 class="font-label-bold text-secondary mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined">lightbulb</span>
+                            Ingat ya!
+                        </h3>
+<p class="font-body-main text-on-surface italic">
+                            "Tujuan utama iklan adalah menarik perhatian dan mengajak orang untuk melakukan sesuatu."
+                        </p>
+</div>
+<!-- Example Section -->
+<div class="space-y-4 pt-4">
+<h3 class="font-headline-lg-mobile text-primary">Contoh Iklan Sederhana</h3>
+<div class="rounded-2xl border-2 border-outline-variant p-4 bg-white">
+<div class="aspect-video relative rounded-xl overflow-hidden mb-4">
+<img class="w-full h-full object-cover" data-alt="A colorful and cheerful commercial advertisement illustration for a healthy fruit juice brand. The scene features a bright yellow background with vibrant illustrations of oranges and strawberries. The central product is a sleek bottle with a friendly cartoon mascot smiling. The lighting is sunny and high-key, creating a professional yet playful educational style suitable for primary school students." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzJjntiDVt44h513NozR4pbdmt2zPA9opDcEOUZUZUtr90cBAhChSYDI8-XeODjd1lmfJzR51qIjXOb84RA6iBDw-SH-gMDi8fohSeUlxn6fSgw1pVkJflbyg4-BmOZONsHdh9MIDOlX38Tg_OgLhiO02WHJnWdBVXx46zTTnb7mu0EqlNe3elURiqEOt8kRAIHf3WlG4zQMXJ3AYXhUDxKsGybh-T8poPX2z79clf3SS8fFUnbHDt"/>
+</div>
+<div class="text-center p-4">
+<p class="font-headline-lg-mobile text-secondary font-extrabold mb-1">Jus Buah Segar!</p>
+<p class="font-body-main text-on-surface-variant">"Segarnya buah asli, bikin badan kuat setiap hari!"</p>
+</div>
+</div>
+<p class="font-body-main text-on-surface-variant text-sm text-center italic">
+                            Contoh iklan produk minuman sehat untuk anak-anak.
+                        </p>
+</div>
+<div class="space-y-4 pt-6 border-t border-outline-variant">
+<h3 class="font-headline-lg-mobile text-primary">Mengapa Kita Butuh Iklan?</h3>
+<ul class="space-y-3">
+<li class="flex gap-4">
+<div class="bg-secondary-container w-8 h-8 rounded-full flex items-center justify-center shrink-0">
+<span class="text-on-secondary-container font-bold">1</span>
+</div>
+<p class="font-body-main text-on-surface">Memberikan informasi tentang barang baru yang dijual.</p>
+</li>
+<li class="flex gap-4">
+<div class="bg-secondary-container w-8 h-8 rounded-full flex items-center justify-center shrink-0">
+<span class="text-on-secondary-container font-bold">2</span>
+</div>
+<p class="font-body-main text-on-surface">Mengingatkan orang-orang tentang manfaat suatu produk.</p>
+</li>
+<li class="flex gap-4">
+<div class="bg-secondary-container w-8 h-8 rounded-full flex items-center justify-center shrink-0">
+<span class="text-on-secondary-container font-bold">3</span>
+</div>
+<p class="font-body-main text-on-surface">Membantu kita memilih barang mana yang paling bagus atau sesuai kebutuhan.</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- Footer Navigation Buttons -->
+<footer class="p-8 bg-surface-container-low flex justify-between gap-4">
+<button class="flex items-center gap-2 px-6 py-3 border-2 border-primary text-primary rounded-xl font-button-text hover:bg-primary-fixed transition-all active:scale-95">
+<span class="material-symbols-outlined">arrow_back</span>
+                        Sebelumnya
+                    </button>
+<button class="flex items-center gap-2 px-6 py-3 bg-secondary text-white rounded-xl font-button-text nav-btn-shadow transition-all active:scale-95">
+                        Berikutnya
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</footer>
+</article>
+<!-- Bottom Spacer for mobile footer -->
+<div class="h-16 md:hidden"></div>
+</main>
+</div>
+<!-- Mobile Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 md:hidden bg-surface dark:bg-surface-container-high shadow-lg rounded-t-xl">
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-bold text-[10px]">Beranda</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="font-label-bold text-[10px]">Materi</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label-bold text-[10px]">Kuis</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-bold text-[10px]">Profil</span>
+</div>
+</nav>
+<!-- Simple Footer for Desktop Content -->
+<footer class="hidden md:flex w-full flex-col md:flex-row justify-between items-center px-margin-desktop py-8 gap-4 border-t border-outline-variant bg-surface-container-highest">
+<div class="font-label-bold text-label-bold text-primary">E-Modul Interaktif</div>
+<p class="font-body-main text-on-surface-variant">© 2024 E-Modul Interaktif - Cerdas Beriklan</p>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:underline" href="#">Tentang</a>
+<a class="text-on-surface-variant hover:underline" href="#">Bantuan</a>
+<a class="text-on-surface-variant hover:underline" href="#">Kontak</a>
+</div>
+</footer>
+<script>
+        // Micro-interaction for sidebar links
+        document.querySelectorAll('aside nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                document.querySelectorAll('aside nav a').forEach(l => {
+                    l.classList.remove('bg-secondary-container', 'text-on-secondary-container', 'font-bold');
+                    l.classList.add('text-on-surface-variant');
+                });
+                link.classList.add('bg-secondary-container', 'text-on-secondary-container', 'font-bold');
+                link.classList.remove('text-on-surface-variant');
+            });
+        });
+
+        // Simulating scrolling smooth to top on navigation
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+        });
+    </script>
+</body></html>
